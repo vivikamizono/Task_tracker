@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Tracker</h1>
+        
+        <form action="{{ url_for('add_task') }}" method="POST">
+            <label for="project_name">Project Name:</label>
+            <input type="text" id="project_name" name="project_name" required><br><br>
+
+            <label for="task_name">Task Name:</label>
+            <input type="text" id="task_name" name="task_name" required><br><br>
+
+            <label for="hours">Time Spent (hours):</label>
+            <input type="number" id="hours" name="hours" min="0" required>
+            <label for="minutes">(minutes):</label>
+            <input type="number" id="minutes" name="minutes" min="0" max="59" required><br><br>
+
+            <label for="description">What you did:</label>
+            <textarea id="description" name="description" required></textarea><br><br>
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <h2>Tasks:</h2>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <strong>Project:</strong> {{ task.project_name }}<br>
+                <strong>Task:</strong> {{ task.name }} - {{ task.hours }} hours {{ task.minutes }} minutes<br>
+                <em>{{ task.description }}</em>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Total Time Spent: {{ total_time }}</h3>
+    </div>
+</body>
+</html>
