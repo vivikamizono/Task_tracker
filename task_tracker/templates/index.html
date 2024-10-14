@@ -29,17 +29,20 @@
         </form>
 
         <h2>Tasks:</h2>
-        <ul>
-            {% for task in tasks %}
-            <li>
-                <strong>Project:</strong> {{ task.project_name }}<br>
-                <strong>Task:</strong> {{ task.name }} - {{ task.hours }} hours {{ task.minutes }} minutes<br>
-                <em>{{ task.description }}</em>
-            </li>
-            {% endfor %}
-        </ul>
+        {% for date, tasks in tasks_by_date.items() %}
+            <h3>{{ date }} - Total Time: {{ daily_totals[date] }}</h3>
+            <ul>
+                {% for task in tasks %}
+                <li>
+                    <strong>Project:</strong> {{ task.project_name }}<br>
+                    <strong>Task:</strong> {{ task.name }} - {{ task.hours }} hours {{ task.minutes }} minutes<br>
+                    <em>{{ task.description }}</em>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
 
-        <h3>Total Time Spent: {{ total_time }}</h3>
+        <h3>Overall Total Time: {{ total_time }}</h3>
     </div>
 </body>
 </html>

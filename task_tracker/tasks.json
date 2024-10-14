@@ -4,6 +4,15 @@
         "name": "Daily",
         "hours": 0,
         "minutes": 50,
-        "description": "Daily"
+        "description": "Daily",
+        "date": "2024-10-14"
+    },
+    {
+        "project_name": "Estudos",
+        "name": "Estudos",
+        "hours": 2,
+        "minutes": 0,
+        "description": "Estudo de Power BI",
+        "date": "2024-10-14"
     }
 ]
