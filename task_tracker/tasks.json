@@ -1,9 +1,18 @@
 [
     {
+        "id": "0",
         "project_name": "Daily",
         "name": "Daily",
-        "hours": 0,
-        "minutes": 50,
-        "description": "Daily"
+        "hours": 0.75,
+        "description": "Daily di\u00e1ria",
+        "date": "14-10-2024"
+    },
+    {
+        "id": "1",
+        "project_name": "Estudos",
+        "name": "Estudos",
+        "hours": 2.0,
+        "description": "Estudos power bi",
+        "date": "14-10-2024"
     }
 ]
